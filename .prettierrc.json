@@ -1,0 +1,9 @@
+{
+  "singleQuote": true, //单引号还是双引号
+  "semi": false, // 结尾带分号
+  "bracketSpacing": true, // 高亮
+  "htmlWhitespaceSensitivity": "ignore",
+  "endOfLine": "auto",
+  "trailingComma": "all",
+  "tabWidth": 2 
+}
