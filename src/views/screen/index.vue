@@ -1,5 +1,5 @@
 <template>
-  <div>分页器</div>
+  <div>数据大屏</div>
 </template>
 
 <script lang="ts" setup="setup"></script>

@@ -1,18 +1,29 @@
-# Vue 3 + TypeScript + Vite
+<!-- 判断是上午还是下午还是晚上 0 - 9.00 早上  9 12上午， 12 18.00下午 18-24晚上 24之后就是早上了 -->
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+let date = new Date().getHours()
+dateHandle(date)
 
-## Recommended IDE Setup
+export default function dateHandle(dateHours: number): string {
+let msg = ''
+if (dateHours <= 9) {
+msg = '早上好'
+} else if (dateHours <= 12) {
+msg = '上午好'
+} else if (dateHours <= 18) {
+msg = '下午好'
+} else {
+msg = '晚上好'
+}
+return msg
+}
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+<!-- 全局路由守卫。可以监视路由切换的进度
+     用到插件 yarn add nprogress
+-->
 
-## Type Support For `.vue` Imports in TS
+接口文档
+服务器 http://sph-api.atguigu.cn
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+http://39.98.123.211:8510/swagger-ui.html#/
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+http://139.198.104.58:8212/swagger-ui.html#/

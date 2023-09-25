@@ -1,16 +1,9 @@
 <template>
   <div>
-    <span>jisonn</span>
+    <router-view></router-view>
   </div>
 </template>
 
 <script lang="ts" setup="setup"></script>
 
-<style lang="scss" scoped>
-div {
-  span {
-    color: $color;
-    font-size: $fz;
-  }
-}
-</style>
+<style lang="less" scoped></style>
